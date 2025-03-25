@@ -3,22 +3,19 @@
     background-color:#d5eeff;
  }
 .header {
-   /* background-color:aliceblue; */
    color: black;
    text-align:left;
-   font-size:14px;
-   font-family:Georgia, 'Times New Roman', Times, serif;
+   font-size:5px;
+  
 }
 .header h1 {
-    margin-bottom: 5px;
-    margin:0;
+   margin-bottom: 30px;
 }
 
-.header h2 {
-    color: white;
+/* .header h2 {
     margin-top: 0;
     margin-bottom: 30px;
-}
+} */
 .form-container{
      border: 2px solid rgb(0, 123, 255);
       border-radius: 15px;
