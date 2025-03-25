@@ -1,89 +1,45 @@
 {
   "counties": [
-    {
-      "name": "Mombasa",
-      "electricians": ["Ali Mwenda", "Omar Juma"],
-      "plumbers": ["Hassan Kiptoo", "Musa Karisa"]
-    },
-    {
-      "name": "Kwale",
-      "electricians": ["Suleiman Charo", "Bakari Mwachiro"],
-      "plumbers": ["Juma Baraka", "Saidi Kombo"]
-    },
-    {
-      "name": "Kilifi",
-      "electricians": ["Mzee Mwadime", "Kassim Kenga"],
-      "plumbers": ["Farid Ndegwa", "Omar Katana"]
-    },
-    {
-      "name": "Tana River",
-      "electricians": ["Abdi Guyo", "Yusuf Wario"],
-      "plumbers": ["Hussein Noor", "Mohamed Gedi"]
-    },
-    {
-      "name": "Lamu",
-      "electricians": ["Swaleh Twahir", "Ali Mzee"],
-      "plumbers": ["Shariff Ahmed", "Saidi Bakari"]
-    },
-    {
-      "name": "Taita Taveta",
-      "electricians": ["Meshack Mutisya", "Peter Mwashumbe"],
-      "plumbers": ["Robert Ndung'u", "Isaac Mwakio"]
-    },
-    {
-      "name": "Garissa",
-      "electricians": ["Abdirahman Aden", "Hassan Ibrahim"],
-      "plumbers": ["Mohamed Yusuf", "Farah Abdullahi"]
-    },
-    {
-      "name": "Wajir",
-      "electricians": ["Said Abdi", "Ismail Noor"],
-      "plumbers": ["Hassan Roble", "Mohamud Ali"]
-    },
-    {
-      "name": "Mandera",
-      "electricians": ["Ahmed Mohamed", "Ibrahim Hassan"],
-      "plumbers": ["Abdullahi Barre", "Farah Ali"]
-    },
-    {
-      "name": "Marsabit",
-      "electricians": ["Jirma Guyo", "Borana Waqo"],
-      "plumbers": ["Hussein Dabasso", "Adan Racho"]
-    },
-    {
-      "name": "Isiolo",
-      "electricians": ["Hassan Iman", "Mohamed Gure"],
-      "plumbers": ["Yussuf Ibrahim", "Suleiman Boru"]
-    },
-    {
-      "name": "Meru",
-      "electricians": ["Mugambi Mutuma", "Mwenda Kiraitu"],
-      "plumbers": ["Kibwana Kithinji", "Mwirigi Mbaabu"]
-    },
-    {
-      "name": "Tharaka Nithi",
-      "electricians": ["Mutembei Kirimi", "Kariuki Muriungi"],
-      "plumbers": ["Gitonga Mugendi", "Kinyua Munene"]
-    },
-    {
-      "name": "Embu",
-      "electricians": ["Njeru Karani", "Muchiri Gikundi"],
-      "plumbers": ["Kang'ethe Njiru", "Muriithi Karanja"]
-    },
-    {
-      "name": "Kitui",
-      "electricians": ["Musyoka Kilonzo", "Mutua Ndunda"],
-      "plumbers": ["Nzomo Wambua", "Kyalo Muthama"]
-    },
-    {
-      "name": "Machakos",
-      "electricians": ["Mwanzia Muthoki", "Kyalo Mutisya"],
-      "plumbers": ["Muema Nzau", "Ndeto Kivuva"]
-    },
-    {
-      "name": "Makueni",
-      "electricians": ["Kilonzo Kitonga", "Mwendwa Mulwa"],
-      "plumbers": ["Mutunga Wambua", "Nzomo Kisilu"]
-    }
+    { "id": 1, "name": "Mombasa", "electricians": ["Ali Mwenda", "Omar Juma"], "plumbers": ["Hassan Kiptoo", "Musa Karisa"] },
+    { "id": 2, "name": "Kwale", "electricians": ["Suleiman Charo", "Bakari Mwachiro"], "plumbers": ["Juma Baraka", "Saidi Kombo"] },
+    { "id": 3, "name": "Kilifi", "electricians": ["Mzee Mwadime", "Kassim Kenga"], "plumbers": ["Farid Ndegwa", "Omar Katana"] },
+    { "id": 4, "name": "Tana River", "electricians": ["Abdi Guyo", "Yusuf Wario"], "plumbers": ["Hussein Noor", "Mohamed Gedi"] },
+    { "id": 5, "name": "Lamu", "electricians": ["Swaleh Twahir", "Ali Mzee"], "plumbers": ["Shariff Ahmed", "Saidi Bakari"] },
+    { "id": 6, "name": "Taita Taveta", "electricians": ["Meshack Mutisya", "Peter Mwashumbe"], "plumbers": ["Robert Ndung'u", "Isaac Mwakio"] },
+    { "id": 7, "name": "Garissa", "electricians": ["Abdirahman Aden", "Hassan Ibrahim"], "plumbers": ["Mohamed Yusuf", "Farah Abdullahi"] },
+    { "id": 8, "name": "Wajir", "electricians": ["Said Abdi", "Ismail Noor"], "plumbers": ["Hassan Roble", "Mohamud Ali"] },
+    { "id": 9, "name": "Mandera", "electricians": ["Ahmed Mohamed", "Ibrahim Hassan"], "plumbers": ["Abdullahi Barre", "Farah Ali"] },
+    { "id": 10, "name": "Marsabit", "electricians": ["Jirma Guyo", "Borana Waqo"], "plumbers": ["Hussein Dabasso", "Adan Racho"] },
+    { "id": 11, "name": "Isiolo", "electricians": ["Hassan Iman", "Mohamed Gure"], "plumbers": ["Yussuf Ibrahim", "Suleiman Boru"] },
+    { "id": 12, "name": "Meru", "electricians": ["Mugambi Mutuma", "Mwenda Kiraitu"], "plumbers": ["Kibwana Kithinji", "Mwirigi Mbaabu"] },
+    { "id": 13, "name": "Tharaka Nithi", "electricians": ["Mutembei Kirimi", "Kariuki Muriungi"], "plumbers": ["Gitonga Mugendi", "Kinyua Munene"] },
+    { "id": 14, "name": "Embu", "electricians": ["Njeru Karani", "Muchiri Gikundi"], "plumbers": ["Kang'ethe Njiru", "Muriithi Karanja"] },
+    { "id": 15, "name": "Kitui", "electricians": ["Musyoka Kilonzo", "Mutua Ndunda"], "plumbers": ["Nzomo Wambua", "Kyalo Muthama"] },
+    { "id": 16, "name": "Machakos", "electricians": ["Mwanzia Muthoki", "Kyalo Mutisya"], "plumbers": ["Muema Nzau", "Ndeto Kivuva"] },
+    { "id": 17, "name": "Makueni", "electricians": ["Kilonzo Kitonga", "Mwendwa Mulwa"], "plumbers": ["Mutunga Wambua", "Nzomo Kisilu"] },
+    { "id": 18, "name": "Kajiado", "electricians": ["Joseph Ole Saitoti", "Daniel Ole Kisio"], "plumbers": ["Lemayian Ole Kantai", "Peter Ole Muntet"] },
+    { "id": 19, "name": "Kericho", "electricians": ["Stephen Kipkemoi", "Robert Kibet"], "plumbers": ["Isaac Kiprono", "Jonah Kipkoech"] },
+    { "id": 20, "name": "Bomet", "electricians": ["Elijah Kipng'etich", "Francis Kipkurui"], "plumbers": ["Kipngetich Cheruiyot", "Daniel Kipkoech"] },
+    { "id": 21, "name": "Vihiga", "electricians": ["Samson Omondi", "David Wasike"], "plumbers": ["Patrick Lumumba", "William Ochieng"] },
+    { "id": 22, "name": "Bungoma", "electricians": ["Joshua Wekesa", "Martin Simiyu"], "plumbers": ["Isaac Makokha", "Nicholas Barasa"] },
+    { "id": 23, "name": "Samburu", "electricians": ["Lemiso Lengima", "John Lesingo"], "plumbers": ["Samuel Letimalo", "Joseph Lekupe"] },
+    { "id": 24, "name": "Trans Nzoia", "electricians": ["Dennis Wafula", "George Wamalwa"], "plumbers": ["Vincent Simiyu", "Peter Nabongo"] },
+    { "id": 25, "name": "Uasin Gishu", "electricians": ["Andrew Kiptoo", "Collins Kibet"], "plumbers": ["Jonah Kiplangat", "Felix Cheruiyot"] },
+    { "id": 26, "name": "Elgeyo Marakwet", "electricians": ["Edwin Kiplagat", "Hillary Kiprono"], "plumbers": ["Duncan Kipchumba", "Simon Koech"] },
+    { "id": 27, "name": "Nairobi", "electricians": ["James Njoroge", "Michael Otieno"], "plumbers": ["Samuel Kariuki", "Peter Mwangi"] },
+    { "id": 28, "name": "Nyandarua", "electricians": ["Daniel Waweru", "Francis Njenga"], "plumbers": ["Stephen Githinji", "Joseph Wachira"] },
+    { "id": 29, "name": "Nyeri", "electricians": ["James Kimani", "Fortune Otieno"], "plumbers": ["Samuel Karanjau", "Peter Muriuki"] },
+    { "id": 30, "name": "Kirinyaga", "electricians": ["Brianna Waweru", "Godwill Njenga"], "plumbers": ["Gift Githinji", "Joseph Charles"] },
+    { "id": 31, "name": "Murang'a", "electricians": ["Shantel Njoroge", "Bancy  Otieno"], "plumbers": ["Darryl Kariuki", "Martin Mwangi"] },
+    { "id": 32, "name": "Kiambu", "electricians": ["Nick Milton", "Job Fina"], "plumbers": ["Simon Githinji", "Joseph Walter"] },
+     { "id": 33, "name": "Turkana", "electricians": ["lemaiyan Lesian", "Sinantei Janet"], "plumbers": ["Ruth Kadzo", "Peter Mwale"] },
+    { "id": 34, "name": "West Pokot", "electricians": ["Ole Waweru", "Francis Marvin"], "plumbers": ["Stephen Kori", "Joseph Miano"] },
+     { "id": 35, "name": "Nandi", "electricians": ["Janet Wangari", "Michael Brez"], "plumbers": ["Samuel Opondo", "Peter Murimi"] },
+    { "id": 36, "name": "Baringo", "electricians": ["Daniel Mwihoko", "Brittney James"], "plumbers": ["Stephen Nasieku", "Ivy Kamau"] },
+     { "id": 37, "name": "Laikipia", "electricians": ["Winnie Mueni", "Michael Kapukha"], "plumbers": ["Mark Mwai", "Peter Jeru"] },
+    { "id": 38, "name": "Nakuru", "electricians": ["Sandra Kinya", "Elijah Misheck"], "plumbers": ["Brenda Githinji", "Bancy Mwenda"] },
+     { "id": 39, "name": "Narok", "electricians": ["Virginia Green", "Paul Ayieko"], "plumbers": ["Blair Shivonje", "Palvinia Amos"] },
+    { "id": 40, "name": "Kakamega", "electricians": ["Divina Meza", "Palet Vishkumar"], "plumbers": ["Sheila Majik","Leala Benson"] }
+
   ]
 }
