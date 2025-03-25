@@ -1,1 +1,52 @@
-@import url("bootstrap.css");
+ @import url("bootstrap.css"); 
+ body{
+    background-color:#d5eeff;
+ }
+.header {
+   /* background-color:aliceblue; */
+   color: black;
+   text-align:left;
+   font-size:14px;
+   font-family:Georgia, 'Times New Roman', Times, serif;
+}
+.header h1 {
+    margin-bottom: 5px;
+    margin:0;
+}
+
+.header h2 {
+    color: white;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+.form-container{
+     border: 2px solid rgb(0, 123, 255);
+      border-radius: 15px;
+     padding:20px 20px;
+     width: 70%;
+     background-color:#eaf6f6;
+}
+.client-details h1{
+    font-size:10px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    width: 600px; 
+    margin: 0 auto; 
+}
+
+#submit-btn{
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    padding: 5px 15px; 
+    border-radius: 50px 50px;
+    margin-top: 10px;
+    width: fit-content;
+    display: block;
+    display:inline-block;
+    align-self: center;
+}
