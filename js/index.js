@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                     alert(`Thank you for booking ${provider}. You will be contacted soon.`);
                                 };
 
-                                // Append elements
+                                
                                 listItem.appendChild(providerName);
                                 listItem.appendChild(btn);
                                 list.appendChild(listItem);
@@ -69,4 +69,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
     locationSelect.addEventListener("change", updateServiceProviders);
     serviceSelect.addEventListener("change", updateServiceProviders);
+    // change theme
+const darkModeButton = document.querySelector(".dark-button");
+    if (darkModeButton) {
+        darkModeButton.addEventListener("click", changeTheme);
+    }
+function changeTheme() {
+        let body = document.querySelector("body");
+        /*Navigating through the different types of modes*/
+        if (body.classList.contains("dark")) {
+          body.classList.remove("dark");
+        } else {
+          body.classList.add("dark");
+        }
+      }
 });
