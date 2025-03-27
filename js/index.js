@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector("#services .container").appendChild(resultsContainer);
 
     // Fetch counties data from db.json
-    fetch("db.json")
+    fetch("https://my-json-server.typicode.com/Nyawirakori/JPlug-Application-System/counties")
         .then(response => response.json())
         .then(data => {
             data.counties.forEach(county => {
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
         resultsContainer.innerHTML = "";
 
         if (selectedLocation && selectedService) {
-            fetch("db.json")
+            fetch("https://my-json-server.typicode.com/Nyawirakori/JPlug-Application-System/counties")
                 .then(response => response.json())
                 .then(data => {
                     const county = data.counties.find(c => c.name === selectedLocation);
@@ -49,11 +49,11 @@ document.addEventListener("DOMContentLoaded", function () {
                                 btn.textContent = "Book";
                                 btn.onclick = function () {
                                     alert(`Thank you for booking ${provider}. You will be contacted soon.`);
-                                }
-                                const rating =document.createElement("div");
+
                                 listItem.appendChild(providerName);
                                 listItem.appendChild(btn);
                                 list.appendChild(listItem);
+                                }
                             });
 
                             resultsContainer.appendChild(list);
