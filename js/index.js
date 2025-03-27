@@ -145,7 +145,7 @@ document.addEventListener("DOMContentLoaded", function () {
      bookingDetailsContainer.style.background= "linear-gradient(108.1deg, rgb(167, 220, 225) 11.2%, rgb(217, 239, 242) 88.9%)";
     document.querySelector("#services .container").appendChild(bookingDetailsContainer);
 
-    // Booking confirmation
+    // Booking confirmation Section
     function showBookingDetails(providerName, serviceType) {
         bookingDetailsContainer.innerHTML = ""; 
         bookingDetailsContainer.classList.remove("d-none"); 
