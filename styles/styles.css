@@ -84,12 +84,10 @@ section{
 }
 #services {
     padding: 30px 20px;
-    background: rgba(255, 255, 255, 0.2);
     border-radius: 10px;
     max-width: 800px;
     margin: 40px auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /* margin-top:-30px; */
     text-align: center;
     backdrop-filter: blur(10px);
 }
@@ -141,6 +139,20 @@ section{
 .contact-details i {
     font-size: 1.5rem;
     margin-right: 8px;
+}
+.star-rating {
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.star {
+    font-size: 1.5em;
+    color: lightgray;
+    cursor: pointer;
+}
+
+.star.rated {
+    color: gold;
 }
 
 
