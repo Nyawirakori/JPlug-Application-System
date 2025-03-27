@@ -42,16 +42,15 @@ document.addEventListener("DOMContentLoaded", function () {
                                 // Provider Name
                                 const providerName = document.createElement("span");
                                 providerName.textContent = provider;
-
+                                
                                 // Booking Button
                                 const btn = document.createElement("button");
                                 btn.classList.add("btn", "btn-primary", "btn-sm");
                                 btn.textContent = "Book";
                                 btn.onclick = function () {
                                     alert(`Thank you for booking ${provider}. You will be contacted soon.`);
-                                };
-
-                                // Append elements
+                                }
+                                const rating =document.createElement("div");
                                 listItem.appendChild(providerName);
                                 listItem.appendChild(btn);
                                 list.appendChild(listItem);
@@ -69,4 +68,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
     locationSelect.addEventListener("change", updateServiceProviders);
     serviceSelect.addEventListener("change", updateServiceProviders);
+    // change theme
+const darkModeButton = document.querySelector(".dark-button");
+    if (darkModeButton) {
+        darkModeButton.addEventListener("click", changeTheme);
+    }
+function changeTheme() {
+        let body = document.querySelector("body");
+        /*Navigating through the different types of modes*/
+        if (body.classList.contains("dark")) {
+          body.classList.remove("dark");
+        } else {
+          body.classList.add("dark");
+        }
+      }
 });
