@@ -2,84 +2,168 @@ document.addEventListener("DOMContentLoaded", function () {
     const locationSelect = document.getElementById("location");
     const serviceSelect = document.getElementById("service");
     const resultsContainer = document.createElement("div");
-    resultsContainer.classList.add("mt-3", "text-center");
+    resultsContainer.classList.add("mt-3");
     document.querySelector("#services .container").appendChild(resultsContainer);
 
-    // Fetch counties data from db.json
-    fetch("https://my-json-server.typicode.com/Nyawirakori/JPlug-Application-System/counties")
-        .then(response => response.json())
-        .then(data => {
-            data.counties.forEach(county => {
-                const option = document.createElement("option");
-                option.value = county.name;
-                option.textContent = county.name;
-                locationSelect.appendChild(option);
-            });
-        })
-        .catch(error => console.error("Error loading counties:", error));
+    fetchCounties(locationSelect);
 
-    // Function to update and display service providers
+    function fetchCounties(locationSelect) {
+        fetch("http://localhost:3000/counties")
+            .then(response => response.json())
+            .then(data => {
+                data.forEach(county => {
+                    const option = document.createElement("option");
+                    option.value = county.name;
+                    option.textContent = county.name;
+                    locationSelect.appendChild(option);
+                });
+            })
+            .catch(error => console.error("Error loading counties:", error));
+    }
+
+    function createStarRating(ratingContainer, updateRatingCallback) {
+        let rating = 0;
+
+        for (let i = 1; i <= 5; i++) {
+            const star = document.createElement("span");
+            star.innerHTML = "&#9734;";
+            star.classList.add("star");
+
+            star.addEventListener("click", () => {
+                rating = i;
+                updateStars(ratingContainer, rating);
+                updateRatingCallback(rating);
+            });
+
+            ratingContainer.appendChild(star);
+        }
+
+        function updateStars(container, currentRating) {
+            container.childNodes.forEach((star, index) => {
+                if (index < currentRating) {
+                    star.classList.add("rated");
+                } else {
+                    star.classList.remove("rated");
+                }
+            });
+        }
+    }
+
+    function renderServiceProviders(providers) {
+        resultsContainer.innerHTML = "";
+
+        const row = document.createElement("div");
+        row.classList.add("row");
+
+        providers.forEach(provider => {
+            const col = document.createElement("div");
+            col.classList.add("col-md-6", "mb-4");
+
+            const card = document.createElement("div");
+            card.classList.add("card");
+
+            const cardBody = document.createElement("div");
+            cardBody.classList.add("card-body");
+
+            const providerName = document.createElement("h5");
+            providerName.classList.add("card-title");
+            providerName.textContent = provider;
+
+            const bookButton = document.createElement("button");
+            bookButton.classList.add("btn", "btn-primary", "btn-sm", "mt-2");
+            bookButton.textContent = "Book";
+            bookButton.addEventListener('click', (event) => {
+                event.preventDefault();
+                showBookingDetails(provider, serviceSelect.value);
+            });
+
+            // Container for the rating and display
+            const ratingWrapper = document.createElement("div");
+            ratingWrapper.classList.add("mt-2", "d-flex", "flex-column");
+
+            const ratingContainer = document.createElement("div");
+            ratingContainer.classList.add("star-rating");
+
+            const rateService = document.createElement("p");
+            rateService.textContent = "Rate the service";
+
+
+            const ratingDisplay = document.createElement("div");
+            ratingDisplay.classList.add("mt-2");
+
+            createStarRating(ratingContainer, (rating) => {
+                ratingDisplay.textContent = `Your rating is: ${rating}/5`;
+            });
+            
+            ratingWrapper.appendChild(rateService);
+            ratingWrapper.appendChild(ratingContainer);
+            ratingWrapper.appendChild(ratingDisplay);
+
+            cardBody.appendChild(providerName);
+            cardBody.appendChild(bookButton);
+            cardBody.appendChild(ratingWrapper);
+            card.appendChild(cardBody);
+            col.appendChild(card);
+            row.appendChild(col);
+        });
+
+        resultsContainer.appendChild(row);
+    }
+
     function updateServiceProviders() {
         const selectedLocation = locationSelect.value;
         const selectedService = serviceSelect.value;
-        resultsContainer.innerHTML = "";
 
         if (selectedLocation && selectedService) {
-            fetch("https://my-json-server.typicode.com/Nyawirakori/JPlug-Application-System/counties")
+            fetch("http://localhost:3000/counties")
                 .then(response => response.json())
                 .then(data => {
-                    const county = data.counties.find(c => c.name === selectedLocation);
-                    if (county) {
-                        const providers = selectedService === "Plumber" ? county.plumbers : county.electricians;
-                        if (providers.length > 0) {
-                            const list = document.createElement("ul");
-                            list.classList.add("list-group", "text-start", "mt-3");
-
-                            providers.forEach(provider => {
-                                const listItem = document.createElement("li");
-                                listItem.classList.add("list-group-item", "d-flex", "justify-content-between", "align-items-center");
-
-                                // Provider Name
-                                const providerName = document.createElement("span");
-                                providerName.textContent = provider;
-                                
-                                // Booking Button
-                                const btn = document.createElement("button");
-                                btn.classList.add("btn", "btn-primary", "btn-sm");
-                                btn.textContent = "Book";
-                                btn.onclick = function () {
-                                    alert(`Thank you for booking ${provider}. You will be contacted soon.`);
-
-                                listItem.appendChild(providerName);
-                                listItem.appendChild(btn);
-                                list.appendChild(listItem);
-                                }
-                            });
-
-                            resultsContainer.appendChild(list);
-                        } else {
-                            resultsContainer.textContent = "No providers available for this selection.";
-                        }
-                    }
+                    const county = data.find(c => c.name === selectedLocation);
+                    const providers = county ? (selectedService === "Plumber" ? county.plumbers : county.electricians) : [];
+                    renderServiceProviders(providers);
                 })
                 .catch(error => console.error("Error fetching service providers:", error));
+        } else {
+            renderServiceProviders([]);
         }
     }
 
     locationSelect.addEventListener("change", updateServiceProviders);
     serviceSelect.addEventListener("change", updateServiceProviders);
-    // change theme
-const darkModeButton = document.querySelector(".dark-button");
+
+    const darkModeButton = document.querySelector(".dark-button");
     if (darkModeButton) {
         darkModeButton.addEventListener("click", changeTheme);
     }
-function changeTheme() {
-        let body = document.querySelector("body");
-        /*Navigating through the different types of modes*/
-        if (body.classList.contains("dark")) {
-          body.classList.remove("dark");
-        } else {
-          body.classList.add("dark");
-        }
-      }
+
+    function changeTheme() {
+        document.body.classList.toggle("dark");
+    }
+
+    const bookingDetailsContainer = document.createElement("div");
+    bookingDetailsContainer.classList.add("booking-details", "mt-4", "p-4", "bg-light", "rounded", "shadow", "d-none");
+     bookingDetailsContainer.style.background= "linear-gradient(108.1deg, rgb(167, 220, 225) 11.2%, rgb(217, 239, 242) 88.9%)";
+    document.querySelector("#services .container").appendChild(bookingDetailsContainer);
+
+    // Booking confirmation
+    function showBookingDetails(providerName, serviceType) {
+        bookingDetailsContainer.innerHTML = ""; 
+        bookingDetailsContainer.classList.remove("d-none"); 
+
+        const title = document.createElement("h4");
+        title.textContent = "Booking Confirmation";
+        title.classList.add("mb-3");
+
+        const providerInfo = document.createElement("p");
+        providerInfo.textContent = `You have booked ${providerName} (${serviceType}).`;
+
+        const timeInfo = document.createElement("p");
+        timeInfo.textContent = `Time: ${new Date().toLocaleTimeString()}`;
+
+
+        bookingDetailsContainer.appendChild(title);
+        bookingDetailsContainer.appendChild(providerInfo);
+        bookingDetailsContainer.appendChild(timeInfo);
+        bookingDetailsContainer.appendChild(closeButton);
+    }
 });
