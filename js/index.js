@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector("#services .container").appendChild(resultsContainer);
 
     // Fetch counties data from db.json
-    fetch("https://my-json-server.typicode.com/Nyawirakori/JPlug-Application-System/counties")
+    fetch("db.json")
         .then(response => response.json())
         .then(data => {
             data.counties.forEach(county => {
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
         resultsContainer.innerHTML = "";
 
         if (selectedLocation && selectedService) {
-            fetch("https://my-json-server.typicode.com/Nyawirakori/JPlug-Application-System/counties")
+            fetch("db.json")
                 .then(response => response.json())
                 .then(data => {
                     const county = data.counties.find(c => c.name === selectedLocation);
